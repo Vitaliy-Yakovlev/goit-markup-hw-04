@@ -132,12 +132,36 @@ a {
 }
 
 .auth-nav .link {
+  display: flex;
+  align-items: center;
+
   color: var(--title-text-color);
 }
 
 .link:hover,
 .link:focus {
   color: var(--accent-color);
+}
+
+/* Псевдоэлементы Шапка */
+
+.auth-nav .link::before {
+  margin-right: 10px;
+  display: block;
+  content: '';
+  width: 16px;
+  height: 12px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.icon-envelope::before {
+  background-image: url('../images/envelope.svg');
+}
+
+.icon-phone::before {
+  background-image: url('../images/smartphone.svg');
 }
 
 /* Герой */
@@ -147,12 +171,28 @@ a {
   text-align: center;
 }
 
-.hero-title {
-  /* display: flex;
+.bcg-img {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  justify-content: center;
+
+  max-width: 1600px;
+  height: 600px;
   margin-left: auto;
   margin-right: auto;
 
-  max-width: 696px; */
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url('../images/hero.jpg');
+}
+
+.hero-title {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 696px;
 
   margin-top: 0;
   margin-bottom: 30px;
@@ -227,6 +267,41 @@ a {
   font-size: 14px;
   line-height: 1.71;
 }
+/* Наши приемущество */
+/* Псевдоэлементы */
+
+.main-item > .item::before {
+  margin-bottom: 30px;
+
+  outline: 1px solid;
+  display: block;
+  content: '';
+  height: 120px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--secondary-command-color);
+}
+
+.icon-antena::before {
+  background-image: url('../images/antenna.svg');
+}
+
+.icon-clock::before {
+  background-image: url('../images/clock.svg');
+}
+
+.icon-diagrama::before {
+  background-image: url('../images/diagram.svg');
+}
+
+.icon-astronaut::before {
+  background-image: url('../images/astronaut.svg');
+}
+
+.command-flex {
+  display: flex;
+  justify-content: space-between;
+}
 
 /* Чем мы занимаемся */
 
@@ -291,11 +366,6 @@ a {
   background-color: var(--secondary-command-color);
 }
 
-.command-flex {
-  display: flex;
-  justify-content: space-between;
-}
-
 .container .flex {
   width: 270px;
 
@@ -303,6 +373,33 @@ a {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+}
+
+.section-client {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+/* Постоянные клиенты */
+/* Псевдоэлименты */
+
+.clients {
+  display: flex;
+  justify-content: space-between;
+}
+
+.clients-link::before {
+  display: flex;
+
+  content: '';
+  width: 170px;
+  height: 90px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
 }
 
 /* Подвал */
@@ -420,7 +517,7 @@ a {
   padding-top: 94px;
   padding-bottom: 94px;
 
-  background-color: var(--secondary-fon-color);
+  background-color: var(--primary-white-color);
 }
 
 .section-workcin .section-title {
