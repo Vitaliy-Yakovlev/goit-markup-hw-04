@@ -269,8 +269,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  background: #f5f4fa;
+
+  background: var(--secondary-command-color);
   border-radius: 4px;
   width: 270px;
   height: 120px;
@@ -610,10 +610,13 @@ a {
 .pic-box {
   display: flex;
   flex-wrap: wrap;
-  margin: -15px;
+  margin-left: -30px;
+  margin-top: -30px;
 }
-.pic-flex {
-  margin: 15px;
+.pic-box > .pic-flex {
+  margin-left: 30px;
+  margin-top: 30px;
+  flex-basis: calc(100% / 3 - 30px);
 }
 
 .pic-link:focus,
